@@ -4,6 +4,23 @@ A work-in-progress voice-controlled vision assistant that combines Python, Ardui
 
 Jarvis listens for voice commands, moves a camera mount through serial commands, captures webcam frames, and can use Gemini to describe scenes or help solve visible math problems. This is a prototype, but it demonstrates real hardware/software integration across audio input, camera processing, AI vision, and Arduino control.
 
+## Demo Status
+
+This repo is currently documented as a prototype. The next portfolio upgrade is adding a short demo video or GIF of the pan/tilt camera responding to voice commands.
+
+## How It Works
+
+```mermaid
+flowchart LR
+    Voice["Voice command"] --> Python["Python command router"]
+    Python --> Camera["OpenCV webcam capture"]
+    Python --> Gemini["Gemini vision analysis"]
+    Python --> TTS["Text-to-speech response"]
+    Python --> Serial["PySerial command"]
+    Serial --> Arduino["Arduino"]
+    Arduino --> Servos["Pan/tilt servos"]
+```
+
 ## Highlights
 
 - Wake-word command routing with speech recognition.
@@ -12,6 +29,15 @@ Jarvis listens for voice commands, moves a camera mount through serial commands,
 - Gemini vision calls for image understanding and math-problem solving.
 - Text-to-speech output using Windows SAPI or `pyttsx3`.
 - Small hardware test scripts for serial, pan movement, vision capture, TTS, and servo detach behavior.
+
+## What It Demonstrates
+
+| Area | Evidence in this project |
+|---|---|
+| Computer vision | Captures webcam frames with OpenCV and sends selected images to Gemini. |
+| Hardware control | Sends serial commands to an Arduino that controls pan/tilt servos. |
+| Voice interface | Uses speech recognition for commands and TTS for spoken responses. |
+| Prototype discipline | Includes focused test scripts for individual hardware/software subsystems. |
 
 ## Tech Stack
 
@@ -75,7 +101,12 @@ python jarvis_test_vision.py
 python jarvis_set_position.py 105 82
 ```
 
+## Portfolio Notes
+
+- Add a photo of the camera/servo mount when available.
+- Add a short terminal/camera-preview GIF when available.
+- Keep `.env` local; `.env.example` documents the expected configuration without exposing keys.
+
 ## Status
 
 Prototype / work in progress. Current limitations include machine-specific audio and camera setup, serial-port calibration, local `.env` configuration, and command phrases that are still evolving. Good next steps would be adding mocked tests for command parsing and separating hardware adapters behind small interfaces.
-
