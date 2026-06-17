@@ -4,9 +4,11 @@ A work-in-progress voice-controlled vision assistant that combines Python, Ardui
 
 Jarvis listens for voice commands, moves a camera mount through serial commands, captures webcam frames, and can use Gemini to describe scenes or help solve visible math problems. This is a prototype, but it demonstrates real hardware/software integration across audio input, camera processing, AI vision, and Arduino control.
 
-## Demo Status
+## Demo
 
-This repo is currently documented as a prototype. The next portfolio upgrade is adding a short demo video or GIF of the pan/tilt camera responding to voice commands.
+[Watch the LinkedIn demo](https://www.linkedin.com/posts/kennedynguyen216_opencv-lsu-jarvis-activity-7462261857047851008-hy47?utm_source=share&utm_medium=member_desktop&rcm=ACoAAF8fJLQBrwnGUubY5rvjq77M4HRz8dQfgTA)
+
+This repo is documented as a prototype, and the demo shows the hardware/software loop in action: voice input, camera movement, computer vision, and spoken responses.
 
 ## How It Works
 
@@ -104,7 +106,7 @@ python jarvis_set_position.py 105 82
 ## Portfolio Notes
 
 - Add a photo of the camera/servo mount when available.
-- Add a short terminal/camera-preview GIF when available.
+- Add a local GIF or video asset when available so visitors can preview the demo directly from GitHub.
 - Keep `.env` local; `.env.example` documents the expected configuration without exposing keys.
 
 ## Status
